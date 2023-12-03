@@ -1,3 +1,4 @@
+import discount.DiscountConditions
 import discount.DiscountPolicy
 
 /***
@@ -5,7 +6,9 @@ import discount.DiscountPolicy
  */
 class Movie(
     private val title: String,  // 제목
-    private val viewingTime: String,    // 관람시간
     val price: Long,   // 가격
-    private val discountPolicy: DiscountPolicy, // 할인정책
+    private val viewingTime: String,    // 관람시간
+    val discountPolicy: DiscountPolicy, // 할인정책
+    val discountConditions: DiscountConditions, // 할인조건들
+    private val screenings: Screenings,
 )
