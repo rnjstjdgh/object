@@ -5,11 +5,11 @@ import Screening
 /***
  * 순서할인조건
  */
-class OrderDiscountCondition(
+class SequenceDiscountCondition(
     private val order: Long
 ): DiscountCondition {
 
     override fun isDiscountCondition(screening: Screening): Boolean {
-        return screening.isSameOrder(this.order)
+        return screening.isSameSequence(this.order)
     }
 }
