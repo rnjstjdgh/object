@@ -5,9 +5,9 @@ import Screening
 class Discounter(
     private val discountConditions: DiscountConditions,
     private val discountPolicy: DiscountPolicy
-) {
+): DiscountStrategy {
 
-    fun calculateDiscountPrice(screening: Screening): Long {
+    override fun calculateDiscountPrice(screening: Screening): Long {
         return if(discountConditions.isDiscountCondition(screening)) {
             discountPolicy.applyDiscount(screening)
         } else {
